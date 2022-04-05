@@ -1,0 +1,10 @@
+<h2>Kötelező paraméter: {{ kotelezo }}</h2>
+
+<div>
+  <h5>Összes paraméterek:</h5>
+  <ul>
+    <li *ngFor="let o of opcionalis | keyvalue">{{ o.key }} : {{ o.value }}</li>
+  </ul>
+</div>
+
+<a [routerLink]="['/alapozas']">Vissza a főoldalra</a>
