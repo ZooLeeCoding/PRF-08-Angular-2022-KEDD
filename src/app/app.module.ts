@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
+import { AlapozasComponent } from './alapozas/alapozas.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  declarations: [AppComponent, HelloComponent, AlapozasComponent],
+  bootstrap: [AppComponent], //ez lesz az első komponens, ami betöltődik
 })
-export class AppModule { }
+export class AppModule {}

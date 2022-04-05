@@ -1,0 +1,22 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<h3>{{ userInput }}</h3>
+<!-- a {{}} közötti részt az Angular modul kiértékeli, illetve ha az
+abban megjelenített változók bármelyike változik, automatikusan újraértékeli -->
+
+<input type="text" [(ngModel)]="userInput" />
+<!-- minden egyes leütéssel frissül automatikusan a userInput változó minden reprezentációja, ez a two-way binding lényege -->
+
+<button (click)="addToList()">SAVE</button>
+
+<p *ngIf="userInput === 'titkosjelszó'">Tudtad a jelszót, gratulálok</p>
+
+<div>
+  <h4>A listám tartalma eddig:</h4>
+  <ul>
+    <li *ngFor="let e of lista" (click)="removeFromList(e)">
+      {{ e }}
+    </li>
+  </ul>
+</div>
+<!-- ngFor direktíva: úgy és annyiszor rendereli a listalemeket a ui-on, ahány tagja van a háttérben a tömbnek, az ngFor-ban megadott paraméterrel tudok az egyéni elemekre hivatkozni -->
